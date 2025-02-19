@@ -13,7 +13,7 @@ $ ls -1F
 
 We want to create a genome assembly for our ancestor. We are going to
 use the quality trimmed forward and backward DNA sequences and use a
-program called [SPAdes](https://cab.spbu.ru/software/spades/) to build a genome
+program called [SPAdes](https://github.com/ablab/spades) to build a genome
 assembly.
 
 **Questions**
@@ -23,9 +23,9 @@ assembly.
 ### Installing the software
 
 We are going to use a program
-called [SPAdes](https://cab.spbu.ru/software/spades/) fo assembling our genome.
+called [SPAdes](https://github.com/ablab/spades) fo assembling our genome.
 In a recent evaluation of assembly
-software, [SPAdes](https://cab.spbu.ru/software/spades/) was found to be a good
+software, [SPAdes](https://github.com/ablab/spades) was found to be a good
 choice for fungal
 genomes [\[ABBAS2014\]](https://genomics.sschmeier.com/ngs-assembly/index.html#abbas2014).
 It is also simple to install and use.
@@ -65,11 +65,11 @@ $ spades.py -t 1 -m 32 -o assembly/spades-default/ -1 read1.fastq.gz -2 read2.fa
 
 **Exercises**
 
-1. Run [SPAdes](https://cab.spbu.ru/software/spades/) with default parameters on the **ancestor**'s **trimmed** **reads**
+1. Run [SPAdes](https://github.com/ablab/spades) with default parameters on the **ancestor**'s **trimmed** **reads**
 
-2. Read in the [SPAdes](https://cab.spbu.ru/software/spades/) manual about about assembling with 2x150bp reads
+2. Read in the [SPAdes](https://github.com/ablab/spades) manual about about assembling with 2x150bp reads
 
-3. Run [SPAdes](https://cab.spbu.ru/software/spades/) a second time but use the options suggested at the [SPAdes](https://cab.spbu.ru/software/spades/) manual [section 3.4](http://cab.spbu.ru/files/release3.14.0/manual.html#sec3.4) for assembling 2x150bp paired-end reads. Use a different output directory `assembly/spades-150` for this run.
+3. Run [SPAdes](https://github.com/ablab/spades) a second time but use the options suggested at the [SPAdes](https://github.com/ablab/spades) manual for assembling 2x150bp paired-end reads. Use a different output directory `assembly/spades-150` for this run.
 
 **Hint**
 
@@ -79,7 +79,7 @@ Should you not get it right, try the commands in [Code: SPAdes assembly (trimme
 
 ### Assembly statistics
 
-[Quast](https://cab.spbu.ru/software/QUAST/) (QUality ASsessment Tool) [\[GUREVICH2013\]](https://genomics.sschmeier.com/ngs-assembly/index.html#gurevich2013), evaluates genome assemblies by computing various metrics, including:
+[Quast](https://github.com/ablab/quast) (QUality ASsessment Tool) [\[GUREVICH2013\]](https://genomics.sschmeier.com/ngs-assembly/index.html#gurevich2013), evaluates genome assemblies by computing various metrics, including:
 
 - N50: length for which the collection of all contigs of that length
   or longer covers at least 50% of assembly length
@@ -89,12 +89,11 @@ Should you not get it right, try the commands in [Code: SPAdes assembly (trimme
   bases
 - genes and operons covered
 
-It is easy with [Quast](https://cab.spbu.ru/software/QUAST/) to compare these
-measures among several assemblies. The program can be used on
-their [website](https://cab.spbu.ru/software/QUAST/), or installed via `conda` as we did at the start of this lesson.
+It is easy with [Quast](https://github.com/ablab/quast) to compare these
+measures among several assemblies. The program can be used via `conda` as we did at the start of this lesson.
 
 
-Run [Quast](https://cab.spbu.ru/software/QUAST/) with both assembly
+Run [Quast](https://github.com/ablab/quast) with both assembly
 scaffolds.fasta files to compare the results.
 
 ```
@@ -103,7 +102,7 @@ $ quast -o assembly/quast assembly/spades-default/scaffolds.fasta assembly/spade
 
 **Exercise**
 
-1. Compare the results of [Quast](https://cab.spbu.ru/software/QUAST/) with regards to the two different assemblies.
+1. Compare the results of [Quast](https://github.com/ablab/quast) with regards to the two different assemblies.
 2. Which one do you prefer and why?
 
 ## Compare the untrimmed data
@@ -114,7 +113,7 @@ $ quast -o assembly/quast assembly/spades-default/scaffolds.fasta assembly/spade
    run the same command you used on the trimmed data on the original
    untrimmed data.
 
-2. Run [Quast](https://cab.spbu.ru/software/QUAST/) on the assembly and
+2. Run [Quast](https://github.com/ablab/quast) on the assembly and
    compare the statistics to the one derived for the trimmed data set.
    Write down your observations.
 
@@ -145,9 +144,9 @@ Should you not get it right, try the commands in [Code: SPAdes assembly (origin
 - Lectures for this topic: [Genome Assembly: An
   Introduction](https://dx.doi.org/10.6084/m9.figshare.2972323.v1)
 
-- [SPAdes](http://bioinf.spbau.ru/spades)
+- [SPAdes](https://github.com/ablab/spades)
 
-- [Quast](http://quast.bioinf.spbau.ru/)
+- [Quast](https://github.com/ablab/quast)
 
 - [Bandage](https://rrwick.github.io/Bandage/) (Bioinformatics
   Application for Navigating De novo Assembly Graphs Easily) is a
